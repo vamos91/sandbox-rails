@@ -1,0 +1,73 @@
+
+
+<header class="navbar">
+    <div class="navbar-brand">
+        <%= link_to 'Mon blog', root_path, class: 'brand-link'%>
+    </div>
+    <div class="navbar-center">
+        <%= link_to 'Tous les posts', posts_path, class: 'nav-link'%>
+    </div>
+    <nav class="navbar-links">
+        <%if user_signed_in? %>
+            <%= link_to current_user.email, user_path(current_user), class: 'nav-link'%>
+            <%= link_to 'Deconnexion', destroy_user_session_path, class: 'nav-link', data: { turbo_method: :delete }%>
+        <%else%>
+            <%= link_to 'Connexion', new_user_session_path, class: 'nav-link'%>
+            <%= link_to 'Inscription', new_user_registration_path, class: 'nav-link'%>
+        <%end%>
+    </nav>
+</header>
+
+<style>
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: transparent;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar-brand {
+    flex-grow: 1;
+}
+
+.brand-link {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: gray;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.brand-link:hover {
+    opacity: 0.8;
+}
+
+.navbar-center {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-left: auto;
+}
+
+.nav-link {
+    color: gray;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+</style>

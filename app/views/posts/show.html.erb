@@ -1,0 +1,32 @@
+<div class="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+  <div class="max-w-3xl mx-auto px-4 py-12">
+
+    <% if notice %>
+      <div class="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+        <p class="text-green-700"><%= notice %></p>
+      </div>
+    <% end %>
+
+    <!-- Header -->
+    <div class="mb-8">
+      <span class="text-xs font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">Article</span>
+      <h1 class="text-4xl font-bold text-gray-900 mt-4 mb-2"><%= @post.title %></h1>
+    </div>
+
+    <!-- Content card -->
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+      <div class="h-48 bg-gradient-to-br from-blue-400 to-purple-500"></div>
+      <div class="p-8">
+        <p class="text-gray-700 leading-relaxed"><%= @post.content %></p>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="mt-8 flex flex-wrap gap-4">
+      <%= link_to "Modifier", edit_post_path(@post), class: "px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors" %>
+      <%= link_to "← Retour", posts_path, class: "px-6 py-2 bg-white text-gray-700 font-semibold rounded-lg shadow hover:shadow-md transition-shadow" %>
+      <%= button_to "Supprimer", @post, method: :delete, class: "px-6 py-2 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-colors", form: { class: "inline-block" } %>
+    </div>
+
+  </div>
+</div>
