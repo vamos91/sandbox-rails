@@ -1,2 +1,1 @@
-web: bin/rails server
-css: bin/rails tailwindcss:watch
+rake db:migrate && RAILS_ENV=production bin/rails server 0.0.0.0 -p ${PORT: -3000}
