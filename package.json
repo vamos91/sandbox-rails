@@ -25,5 +25,8 @@
   "homepage": "https://github.com/vamos91/sandbox-rails#readme",
   "dependencies": {
     "cypress": "^15.15.0"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^10.4.0"
   }
 }
