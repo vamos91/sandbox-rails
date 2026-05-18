@@ -3,8 +3,11 @@ builder = "dockerfile"
 dockerfilePath = "Dockerfile"
 
 [deploy]
-startCommand = "./bin/thrust --http-port $PORT ./bin/rails server"
+startCommand = "./bin/thrust ./bin/rails server"
 healthcheckPath = "/up"
 healthcheckTimeout = 60
 restartPolicyType = "on_failure"
 restartPolicyMaxRetries = 3
+
+[deploy.environmentVariables]
+PORT = "80"
