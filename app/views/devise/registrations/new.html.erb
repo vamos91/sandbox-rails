@@ -136,11 +136,11 @@
     <p class="signup-subtitle">Create your account to get started</p>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
+      <%= render "devise/shared/error_messages", resource: resource, class: 'alert' %>
 
       <div class="field">
         <%= f.label :email %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Enter your email" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Enter your email", class: "email" %>
       </div>
 
       <div class="field">
@@ -148,16 +148,16 @@
         <% if @minimum_password_length %>
           <p class="password-hint">(<%= @minimum_password_length %> characters minimum)</p>
         <% end %>
-        <%= f.password_field :password, autocomplete: "new-password", placeholder: "Enter your password" %>
+        <%= f.password_field :password, autocomplete: "new-password", placeholder: "Enter your password", class: "password" %>
       </div>
 
       <div class="field">
         <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm your password" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm your password", class: "confirm-password" %>
       </div>
 
       <div class="actions">
-        <%= f.submit "Sign up" %>
+        <%= f.submit "Sign up", class: "submit-button" %>
       </div>
     <% end %>
 

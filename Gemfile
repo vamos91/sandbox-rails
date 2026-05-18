@@ -68,3 +68,9 @@ end
 gem "devise", "~> 5.0"
 
 gem "tailwindcss-rails", "~> 4.4"
+
+group :development, :test do
+   gem "factory_bot_rails"
+   gem "rspec-rails"
+     gem "cypress-on-rails"
+end
