@@ -11,6 +11,9 @@ module Blog
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 8.1
 
+    # Allow SECRET_KEY_BASE to be set via environment variable (required for Railway/Docker deployments)
+    config.secret_key_base = ENV["SECRET_KEY_BASE"] if ENV["SECRET_KEY_BASE"].present?
+
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.
