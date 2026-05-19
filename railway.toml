@@ -10,4 +10,5 @@ restartPolicyType = "on_failure"
 restartPolicyMaxRetries = 3
 
 [deploy.environmentVariables]
-HTTP_PORT = "${{PORT}}"
+HTTP_PORT = "8080"
+PORT = "8080"
